@@ -1,4 +1,7 @@
 #!/bin/bash
+# script to change balckight brightness with xrandr on miix310
+# usage: brighness [10-100]
+# in case of missing or invalid parameter it will be set to default 35
 ERROR=false
 re='^[0-9]+$'
 if ! [[ $1 =~ $re ]] ; then
