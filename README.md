@@ -1,5 +1,5 @@
 # General
-This repo will contain useful information and code snippets about Linux (Ubuntu 18) on Lenovo MIIX 310-10 ICR tablet.
+This repo contains useful information and code snippets about Linux installation (Ubuntu 18) on Lenovo MIIX 310-10 ICR tablet.
 [Device specs are here.](https://www.lenovo.com/us/en/tablets/windows-tablets/miix-series/Ideapad-Miix-310/p/88EMMX30692)
 It is not available anymore, but they released a MIIX-320 which is pretty much the same, maybe a bit better.
 Device has Intel Atom X5 Z8350 Processor [More on WikiChip](https://en.wikichip.org/wiki/intel/atom_x5/x5-z8350). Touchscreen model is "Goodix Capacitive TouchScreen". Audio is rt5645. Video: Intel CherryTrail. I have 2GB of RAM, but there were versions with 4GB.
