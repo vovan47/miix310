@@ -1,6 +1,6 @@
 # General
 This repo will contain useful information and code snippets about Linux (Ubuntu 18) on Lenovo MIIX 310-10 ICR tablet.
-Device specs: https://www.lenovo.com/us/en/tablets/windows-tablets/miix-series/Ideapad-Miix-310/p/88EMMX30692
+[Device specs are here.](https://www.lenovo.com/us/en/tablets/windows-tablets/miix-series/Ideapad-Miix-310/p/88EMMX30692)
 It is not available anymore, but they released a MIIX-320 which is pretty much the same, maybe a bit better.
 Device has Intel Atom X5 Z8350 Processor. Touchscreen model is "Goodix Capacitive TouchScreen". Audio is rt5645. Video: Intel CherryTrail.
 Further information could be useful on similar platforms.
@@ -8,7 +8,7 @@ Further information could be useful on similar platforms.
 # Updating BIOS
 
 If you want to install Linux, you have to update BIOS to latest version (1HCN44WW at the moment of writing this) from Windows installation.
-Download it here: https://pcsupport.lenovo.com/gb/en/products/tablets/miix-series/miix-310-10icr/downloads/ds112922
+Download it [here (Lenovo official)](https://pcsupport.lenovo.com/gb/en/products/tablets/miix-series/miix-310-10icr/downloads/ds112922).
 Installation is straightforward.
 
 # Ubuntu installation
@@ -29,9 +29,8 @@ To rotate it properly:
 If that persists, just add put line to auto-load.
 
 ## Fixing black screen on boot.
-Credits are going to this post on Lenovo forum: https://forums.lenovo.com/t5/Linux-Discussion/ubuntu-for-Miix-310-10ICR-Tablet/m-p/3996259/highlight/true#M10556
+Credits are going to [this post on Lenovo forum](https://forums.lenovo.com/t5/Linux-Discussion/ubuntu-for-Miix-310-10ICR-Tablet/m-p/3996259/highlight/true#M10556).
 
-Copy-paste:
 1. Add "pwm_lpss_platform" into `/etc/initramfs-tools/modules` file
 1. `$ sudo update-initramfs -k all -u`
 
@@ -44,7 +43,7 @@ Copy-paste:
 ## Backlight
 
 After all above tweaks, native backlight regulation still doesn't work, at least for me.
-In theory, it is fixed in new version of Linux kernel: https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1783964
+In theory, it is [fixed in new version of Linux kernel.](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1783964)
 But I've tried recompiling kernel with those options enabled and it still doesn't work.
 So I use `xrandr` to change brightness via terminal. I wrote a small Bash script to simplify usage, I will put it here in separate file, `brightness.sh`.
 
