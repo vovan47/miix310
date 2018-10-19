@@ -70,7 +70,7 @@ To do that, just download it, put into folder where you extracted downloaded arc
 
 Yes, this processor has virtualization feature and can run Docker!
 However, if you recompiled kernel with instructions above, some required parameters will be not set. 
-Here is a bash script to check your kernel config: (link)[https://github.com/moby/moby/blob/master/contrib/check-config.sh]
+Here is a bash script to check your kernel config: [link](https://github.com/moby/moby/blob/master/contrib/check-config.sh)
 I spent some time searching for desired options and finding them in the `menuconfig`. (no, you can't just enable them in a text file, as they have dependencies).
 I will put my `.config` here as a separate file.
 
