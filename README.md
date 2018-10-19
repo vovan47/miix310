@@ -2,7 +2,7 @@
 This repo will contain useful information and code snippets about Linux (Ubuntu 18) on Lenovo MIIX 310-10 ICR tablet.
 [Device specs are here.](https://www.lenovo.com/us/en/tablets/windows-tablets/miix-series/Ideapad-Miix-310/p/88EMMX30692)
 It is not available anymore, but they released a MIIX-320 which is pretty much the same, maybe a bit better.
-Device has Intel Atom X5 Z8350 Processor. Touchscreen model is "Goodix Capacitive TouchScreen". Audio is rt5645. Video: Intel CherryTrail. I have 2GB of RAM, but there were versions with 4GB.
+Device has Intel Atom X5 Z8350 Processor [More on WikiChip](https://en.wikichip.org/wiki/intel/atom_x5/x5-z8350). Touchscreen model is "Goodix Capacitive TouchScreen". Audio is rt5645. Video: Intel CherryTrail. I have 2GB of RAM, but there were versions with 4GB.
 Further information could be useful on similar platforms.
 
 # Updating BIOS
@@ -58,7 +58,7 @@ So here are instructions how it's done in Ubuntu.
 1. You need to apply [this patch](https://github.com/graysky2/kernel_gcc_patch) to have extra processor type options that we need
 To do that, just download it, put into folder where you extracted downloaded archive and execute `$ patch -p1 < PATCH_NAME.patch`
 1. Run configuration program `$ make menuconfig` 
-1. Under "Processor family" select "Intel Silvermont family of low-power Atom processors (Silvermont)"
+1. Under "Processor type and features -> Processor family" select "Intel Silvermont family of low-power Atom processors (Silvermont)"
 1. You can do some extra edits to configuration if you know what you are doing. For example, I've set `CONFIG_DEBUG_INFO` to `n`.
 1. When you are done, save the config and exit.
 1. `$ make localmodconfig`. All devices that are going to be used should be plugged into device on this point. You can just press "Enter" or "Yes" to all questions.
