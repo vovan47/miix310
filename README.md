@@ -2,7 +2,7 @@
 This repo will contain useful information and code snippets about Linux (Ubuntu 18) on Lenovo MIIX 310-10 ICR tablet.
 [Device specs are here.](https://www.lenovo.com/us/en/tablets/windows-tablets/miix-series/Ideapad-Miix-310/p/88EMMX30692)
 It is not available anymore, but they released a MIIX-320 which is pretty much the same, maybe a bit better.
-Device has Intel Atom X5 Z8350 Processor. Touchscreen model is "Goodix Capacitive TouchScreen". Audio is rt5645. Video: Intel CherryTrail.
+Device has Intel Atom X5 Z8350 Processor. Touchscreen model is "Goodix Capacitive TouchScreen". Audio is rt5645. Video: Intel CherryTrail. I have 2GB of RAM, but there were versions with 4GB.
 Further information could be useful on similar platforms.
 
 # Updating BIOS
@@ -26,7 +26,7 @@ It could be that screen is rotated in a horizontal way at first boot.
 To rotate it properly:
 1. Open a terminal with Ctrl + Alt + T
 1. Type `xrandr -o right` and hit enter.
-If that persists, just add put line to auto-load.
+If that persists, just add the above line to auto-load.
 
 ## Fixing black screen on boot.
 Credits are going to [this post on Lenovo forum](https://forums.lenovo.com/t5/Linux-Discussion/ubuntu-for-Miix-310-10ICR-Tablet/m-p/3996259/highlight/true#M10556).
@@ -46,5 +46,25 @@ After all above tweaks, native backlight regulation still doesn't work, at least
 In theory, it is [fixed in new version of Linux kernel.](https://bugs.launchpad.net/ubuntu/+source/linux/+bug/1783964)
 But I've tried recompiling kernel with those options enabled and it still doesn't work.
 So I use `xrandr` to change brightness via terminal. I wrote a small Bash script to simplify usage, I will put it here in separate file, `brightness.sh`.
+
+# Recompiling the kernel
+
+The device is pretty low-perfomance, so, to make most out of it, you might want to re-compile kernel with specific settings for that platform.
+So here are instructions how it's done in Ubuntu.
+
+1. Download latest stable kernel from https://www.kernel.org
+1. Install required packages:
+`$ sudo apt-get install gcc make libncurses5-dev libssl-dev bison flex libelf-dev`
+1. You need to apply [this patch](https://github.com/graysky2/kernel_gcc_patch) to have extra processor type options that we need
+To do that, just download it, put into folder where you extracted downloaded archive and execute `$ patch -p1 < PATCH_NAME.patch`
+1. Run configuration program `$ make menuconfig` 
+1. Under "Processor family" select "Intel Silvermont family of low-power Atom processors (Silvermont)"
+1. You can do some extra edits to configuration if you know what you are doing. For example, I've set `CONFIG_DEBUG_INFO` to `n`.
+1. When you are done, save the config and exit.
+1. `$ make localmodconfig`. All deviced that are going to be used should be plugged in on this point. You can just press "Enter" or "Yes" to all questions.
+1. Compile it with `$ make -j4 bindeb-pkg` command. "4" after `-j` is a number of threads (or logical processors in your system).
+1. Wait 20-30 minutes until it's done. `.deb` files will appear in a directory one level above. Install them with `$ sudo dpkg -i linux*.deb` command.
+1. If everything is correct, Ubuntu will boot into a new kernel after reboot. If something gone wrong, access GRUB boot menu and select older kernel version.
+
 
 
