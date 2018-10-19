@@ -61,7 +61,7 @@ To do that, just download it, put into folder where you extracted downloaded arc
 1. Under "Processor family" select "Intel Silvermont family of low-power Atom processors (Silvermont)"
 1. You can do some extra edits to configuration if you know what you are doing. For example, I've set `CONFIG_DEBUG_INFO` to `n`.
 1. When you are done, save the config and exit.
-1. `$ make localmodconfig`. All deviced that are going to be used should be plugged in on this point. You can just press "Enter" or "Yes" to all questions.
+1. `$ make localmodconfig`. All devices that are going to be used should be plugged into device on this point. You can just press "Enter" or "Yes" to all questions.
 1. Compile it with `$ make -j4 bindeb-pkg` command. "4" after `-j` is a number of threads (or logical processors in your system).
 1. Wait 20-30 minutes until it's done. `.deb` files will appear in a directory one level above. Install them with `$ sudo dpkg -i linux*.deb` command.
 1. If everything is correct, Ubuntu will boot into a new kernel after reboot. If something gone wrong, access GRUB boot menu and select older kernel version.
@@ -74,5 +74,4 @@ Here is a bash script to check your kernel config: [link](https://github.com/mob
 I spent some time searching for desired options and finding them in the `menuconfig`. (no, you can't just enable them in a text file, as they have dependencies).
 I will put my `.config` here as a separate file.
 
-
-
+# That's it. Cheers!
