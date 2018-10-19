@@ -28,7 +28,7 @@ To rotate it properly:
 1. Type `xrandr -o right` and hit enter.
 If that persists, just add the above line to auto-load.
 
-## Fixing black screen on boot.
+## Fixing black screen on boot
 Credits are going to [this post on Lenovo forum](https://forums.lenovo.com/t5/Linux-Discussion/ubuntu-for-Miix-310-10ICR-Tablet/m-p/3996259/highlight/true#M10556).
 
 1. Add "pwm_lpss_platform" into `/etc/initramfs-tools/modules` file
