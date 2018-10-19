@@ -5,5 +5,5 @@ Device specs: https://www.lenovo.com/us/en/tablets/windows-tablets/miix-series/I
 
 It is not available anymore, but they released a MIIX-320 which is pretty much the same.
 
-Device has Intel Atom X5 Z8350 Processor.
+Device has Intel Atom X5 Z8350 Processor. Touchscreen model is "Goodix Capacitive TouchScreen". Audio is rt5645.
 
