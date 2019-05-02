@@ -37,7 +37,7 @@ Credits are going to [this post on Lenovo forum](https://forums.lenovo.com/t5/Li
 ## GRUB tweaks
 
 1. Edit GRUB_CMDLINE_LINUX_DEFAULT in `/etc/default/grub`
-1. Make it look like this: `GRUB_CMDLINE_LINUX_DEFAULT="video=DSI-1:800x1280e acpi_osi= i915.modeset=1 fbcon=rotate:1  video.use_native_backlight=1 i915.enable_fbc=1 i915.enable_rc6=1 i915.semaphores=1 nospalsh quiet"`
+1. Make it look like this: `GRUB_CMDLINE_LINUX_DEFAULT="video=DSI-1:800x1280e acpi_osi= i915.modeset=1 fbcon=rotate:1  video.use_native_backlight=1 i915.enable_fbc=1 i915.enable_rc6=1 i915.semaphores=1 nosplash quiet"`
 1. `$ sudo update-grub`
 
 ## Backlight
