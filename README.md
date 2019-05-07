@@ -47,6 +47,19 @@ In theory, it is [fixed in new version of Linux kernel.](https://bugs.launchpad.
 But I've tried recompiling kernel with those options enabled and it still doesn't work.
 So I use `xrandr` to change brightness via terminal. I wrote a small Bash script to simplify usage, I will put it here in separate file, `brightness.sh`.
 
+## Improving sound
+
+I heard a lot of complaints about low sound volume on this device on all OS and had it personally on Windows.
+But it turned out that it's not hardware problem!
+On linux it could be fixed with special config files called "UCM for ALSA".
+Here is the repo you should use: 
+https://github.com/plbossart/UCM
+Just download the archive.
+For this device, audio is "rt5645" which corresponds to "chtrt5645" from that repo.
+Copy this folder to `/usr/share/alsa/ucm/`:
+`# cp -r ~/Downloads/UCM/chtrt5645 /usr/share/alsa/ucm/`
+Reboot and sound should be loud.
+
 # Recompiling the kernel
 
 The device is pretty low-perfomance, so, to make most out of it, you might want to re-compile kernel with specific settings for that platform.
