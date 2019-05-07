@@ -86,5 +86,6 @@ However, if you recompiled kernel with instructions above, some required paramet
 Here is a bash script to check your kernel config: [link](https://github.com/moby/moby/blob/master/contrib/check-config.sh)
 I spent some time searching for desired options and finding them in the `menuconfig`. (no, you can't just enable them in a text file, as they have dependencies).
 I will put my `.config` here as a separate file.
+If you will use my config *please note that it's for `4.18.13`* kernel version. To use the configuration of the old kernel with the new kernel, it needs to be converted. The conversion can be done by running either `make silentoldconfig` or `make olddefconfig`. Use either, not both.
 
 # That's it. Cheers!
